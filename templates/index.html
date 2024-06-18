@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Filing Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo-div">
+                <h1 class="logo">{{app_name}}</h1>
+                <hr>                
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">File Taxes</a></li>
+                    <li><a href="#">View Past Returns</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="container">
+                    <h2>Welcome to {{app_name}} the Tax Filing Assistant.</h2>
+                    <i class="fa-thin fa-circle-question"></i> <!-- Font Awesome icon -->
+                    <p>File your taxes with our easy-to-use tax filing system. Easily and securely.</p>
+                    <p>To begin, enter your tax information below:</p>
+
+                </div>
+
+                <div class="container">
+                    <form id="taxFrom" action="#">
+
+                        <!-- income -->
+                        <div class="form-group">
+                            <label for="income">Income: <span class="required">*</span>
+                                <span class="tooltip mobile">(?)
+                                    <span class="tooltip-text">Your overall income in USD</span>
+                                </span>
+                            </label>
+                            <input type="text" id="income" name="income" required>
+                            <span class="tooltip desktop">(?)
+                                <span class="tooltip-text">Your overall income in USD</span>
+                            </span>
+                        </div>
+
+                        <!-- expenses -->
+                        <div class="form-group">
+                            <label for="expenses">Expenses: <span class="required">*</span>
+                                <span class="tooltip mobile">(?)
+                                    <span class="tooltip-text">Your overall expenses in USD</span>
+                                </span>
+                            </label>
+                            <input type="text" id="expenses" name="expenses" required>
+                            <span class="tooltip desktop">(?)
+                                <span class="tooltip-text">Your overall expenses in USD</span>
+                            </span>
+                        </div>
+
+                        <!-- Filing status -->
+                        <div class="form-group">
+                            <label for="filing-status">Filing Status <span class="required">*</span>
+                                <span class="tooltip mobile">(?)
+                                    <span class="tooltip-text">Choose your marital status for tax filing.</span>
+                                </span>
+                            </label>
+                            <select id="filing-status" name="filing-status" required>
+                                <option value="">Select Filing Status</option>
+                                <option value="single">Single</option>
+                                <option value="married-jointly">Married Filing Jointly</option>
+                                <option value="married-separately">Married Filing Separately</option>
+                                <option value="widower">Qualifying Widow(er)</option>
+                            </select>
+                            <span class="tooltip desktop">(?)
+                                <span class="tooltip-text">Choose your marital status for tax filing.</span>
+                            </span>
+                        </div>
+
+                        <!-- Dependents -->
+                        <div class="form-group">
+                            <label for="dependents">Number of dependents: <span class="required">*</span>
+                                <span class="tooltip mobile">(?)
+                                    <span class="tooltip-text">Such as children or other dependents who may qualify for tax benefits.</span>
+                                </span>
+                            </label>
+                            <input type="number" id="dependents" name="dependents" required>
+                            <span class="tooltip desktop">(?)
+                                <span class="tooltip-text">Such as children or other dependents who may qualify for tax benefits.</span>
+                            </span>
+                        </div>
+                        
+                        <!-- investment assets -->
+                        <div class="form-group">
+                            <label for="investment-assets">Investment and Asset Information
+                                <span class="tooltip mobile">(?)
+                                    <span class="tooltip-text">Details about investments and assets held by the taxpayer, including stocks, bonds, mutual funds, real estate properties, and any other investments.</span>
+                                </span>
+                            </label>
+                                <textarea id="investment-assets" name="investment-assets" rows="2"></textarea>
+                                <span class="tooltip desktop">(?)
+                                    <span class="tooltip-text">Details about investments and assets held by the taxpayer, including stocks, bonds, mutual funds, real estate properties, and any other investments.</span>
+                                </span>
+                         </div>
+
+                        <button type="submit">Submit</button>
+
+                    </form>
+                </div>
+                    
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 {{app_name}}. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
