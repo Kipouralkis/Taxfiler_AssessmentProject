@@ -1,8 +1,12 @@
-from flask import Flask, render_template, request, url_for, flash, redirect, abort
-import sqlite3
-import init_db
 import os
+import sqlite3
+
+from flask import Flask, abort, flash, redirect, render_template, request, url_for
+from openai_request import get_response
+
+import init_db
 import validations
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '1234'
@@ -18,7 +22,6 @@ def get_db_connection(db_path):
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     return conn
-
 
 # Routes
 
@@ -67,13 +70,37 @@ def create():
             conn.close()
 
             flash('Tax information added successfully!', 'success')
-            return redirect(url_for('index'))
+
+
+            advice = get_response(sanitized_data)
+            return render_template('index.html', app_name=app_name, advice=advice)    
         
         except sqlite3.Error as e:
             abort(500, f'Database error: {e}')
 
     return render_template('index.html', app_name=app_name)
+
+
       
+# @app.rote('/get_tax_advice', methods = ['POST'])
+# def get_tax_advice():
+#     if request.method == 'POST':
+#         # Collect user inputs
+#         income = request.form['income']
+#         expenses = request.form['expenses']
+#         filing_status = request.form['filing-status']
+#         dependents = request.form['dependents']
+#         investment_assets = request.form['investment-assets']
+
+#     # Prepare input for the AI model
+#     prompt = f"Given income of {income}, expenses of {expenses}, filing status of {filing_status}, {dependents} dependents, and investment assets of {investment_assets}, provide tax advice."
+
+#     # Call the OpenAI API to generate tax advice
+#     # try: 
+#     #     response = openai.completions.create(
+
+#     #     )
+
 
 
 if __name__ == '__main__':
