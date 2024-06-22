@@ -145,7 +145,7 @@ The steps taken to integrate the model into the application were
 
     ```
 
-3. Endpoint for Handling sSubmission
+3. Endpoint for Handling Submission
 
     - The `/create` Endpoint handles POST requests from the form, validates and sanitizes input data, stores in the database and uses the `get_response` function to send the data to the AI API.
 
