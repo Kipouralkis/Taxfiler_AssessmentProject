@@ -71,7 +71,7 @@ def create():
 
             flash('Tax information added successfully!', 'success')
 
-
+            # After writting to database has been successful, get AI advice
             advice = get_response(sanitized_data)
             return render_template('index.html', app_name=app_name, advice=advice)    
         
@@ -79,27 +79,6 @@ def create():
             abort(500, f'Database error: {e}')
 
     return render_template('index.html', app_name=app_name)
-
-
-      
-# @app.rote('/get_tax_advice', methods = ['POST'])
-# def get_tax_advice():
-#     if request.method == 'POST':
-#         # Collect user inputs
-#         income = request.form['income']
-#         expenses = request.form['expenses']
-#         filing_status = request.form['filing-status']
-#         dependents = request.form['dependents']
-#         investment_assets = request.form['investment-assets']
-
-#     # Prepare input for the AI model
-#     prompt = f"Given income of {income}, expenses of {expenses}, filing status of {filing_status}, {dependents} dependents, and investment assets of {investment_assets}, provide tax advice."
-
-#     # Call the OpenAI API to generate tax advice
-#     # try: 
-#     #     response = openai.completions.create(
-
-#     #     )
 
 
 

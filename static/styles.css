@@ -289,10 +289,8 @@ button[type="submit"]:hover {
 /* Advice Styles */
 .advice {
     background-color: var(--advice-bg);
-    /* border: 5px solid var(--primary-color); */
     padding: 20px;
     margin-top: 20px;
-    /* border-radius: 5px; */
 }
 
 .gradient-border{
