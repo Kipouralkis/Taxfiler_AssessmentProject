@@ -1,8 +1,12 @@
-from flask import Flask, render_template, request, url_for, flash, redirect, abort
-import sqlite3
-import init_db
 import os
+import sqlite3
+
+from flask import Flask, abort, flash, redirect, render_template, request, url_for
+from openai_request import get_response
+
+import init_db
 import validations
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '1234'
@@ -18,7 +22,6 @@ def get_db_connection(db_path):
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     return conn
-
 
 # Routes
 
@@ -67,13 +70,16 @@ def create():
             conn.close()
 
             flash('Tax information added successfully!', 'success')
-            return redirect(url_for('index'))
+
+            # After writting to database has been successful, get AI advice
+            advice = get_response(sanitized_data)
+            return render_template('index.html', app_name=app_name, advice=advice)    
         
         except sqlite3.Error as e:
             abort(500, f'Database error: {e}')
 
     return render_template('index.html', app_name=app_name)
-      
+
 
 
 if __name__ == '__main__':

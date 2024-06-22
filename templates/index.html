@@ -132,6 +132,21 @@
                 </div>
                     
             </section>
+
+            <!-- Section to display AI advice -->
+            <section id="advice-section">
+                <div class="container">
+                    {% if advice %}
+                    <div class="advice gradient-border">
+                        <div class="advice-inner">
+                            <h2>Your Tax Advice</h2>
+                            <p>{{ advice|safe }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </section>
+
         </main>
 
         <footer>
