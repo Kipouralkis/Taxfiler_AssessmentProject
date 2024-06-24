@@ -96,7 +96,7 @@ This application integrates an OpenAI model to provide tax adviced based on user
 2. Create a `.env` file in the root directory of your project and add your OpenAI API key:
 
     ```shell
-    OPENAI_API_KEY = 'your-api-key'
+    OPENAI_API_KEY = your-api-key
     ```
 3. Run the application as before
 
@@ -151,3 +151,26 @@ The steps taken to integrate the model into the application were
 
 
 
+## Docker
+
+### Building the Docker container
+
+1. Inside the repositroy, you will find a Dockerfile. Use this to build a docker image:
+
+    ```bash
+    docker buid -t taxfiler .
+    ```
+
+2. Once the docker image is built, you can create a container using the follwoing command:
+
+```bash
+docker run -p 5000:5000 -e "OPENAI_API_KEY=your-api-key" taxfiler
+```
+
+Explanation: 
+    - `docker run`: This command creates and starts a new Docker container.
+    - `-p 5000:5000`: Maps port 5000 on the host machine to port 5000 inside the Docker container. You can adjust the ports as necessary.
+    - `-e "OPENAI_API_KEY=your-api-key"`: Sets an environment variable inside the container for the OPENAI key.
+    - `taxfiler`: Specifies the Docker image to use for running the container.
+
+3. Once the Docker container is running, you can access your application by navigating to http://localhost:5000 in your web browser.

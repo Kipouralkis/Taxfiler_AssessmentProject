@@ -11,7 +11,7 @@ import validations
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '1234'
 app_name = "EasyTax!"
-db_path = os.path.join(os.path.dirname(__file__), 'database.db')
+db_path = os.path.join(os.path.dirname(__file__), 'data/database.db')
 
 # Ensure the init_db script runs only once during application startup
 if not os.path.exists(db_path):
