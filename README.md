@@ -153,6 +153,9 @@ The steps taken to integrate the model into the application were
 
 ## Docker
 
+### Prerequisites: 
+- Install Docker
+
 ### Building the Docker container
 
 1. Inside the repositroy, you will find a Dockerfile. Use this to build a docker image:
@@ -161,16 +164,19 @@ The steps taken to integrate the model into the application were
     docker buid -t taxfiler .
     ```
 
-2. Once the docker image is built, you can create a container using the follwoing command:
+2. When the docker image is done building, you can create a container using the following command:
 
-```bash
-docker run -p 5000:5000 -e "OPENAI_API_KEY=your-api-key" taxfiler
-```
+    ```bash
+    docker run --name easytax-v1.0 -p 5000:5000 -v taxfiler-db:/app/data -e "OPENAI_API_KEY=your-api-key" taxfiler
+    ```
 
-Explanation: 
+    #### Explanation:
+
+    - `--name easytax-v1.0`: Set a name for your container
     - `docker run`: This command creates and starts a new Docker container.
     - `-p 5000:5000`: Maps port 5000 on the host machine to port 5000 inside the Docker container. You can adjust the ports as necessary.
+    - `-v taxfiler-db:/app/data`: Creates a docker volume called taxfiler-db. The volume is used to persist the app data even when a container is deleted. The volume is mounted to /app/data inside the container, where the application expects to find its database.
     - `-e "OPENAI_API_KEY=your-api-key"`: Sets an environment variable inside the container for the OPENAI key.
     - `taxfiler`: Specifies the Docker image to use for running the container.
 
-3. Once the Docker container is running, you can access your application by navigating to http://localhost:5000 in your web browser.
+4. Once the Docker container is running, you can access your application by navigating to http://localhost:5000 in your web browser.
