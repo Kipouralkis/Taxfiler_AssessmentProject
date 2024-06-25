@@ -1,40 +1,59 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Flask message transitions
-    var successFlash = document.querySelector(".flash-success");
+    // Flash message transitions
+    function handleFlashMessages() {
+        var successFlash = document.querySelector(".flash-success");
 
-    if (successFlash) {
-        setTimeout(function() {
-            successFlash.classList.add("fade-out");
-
+        if (successFlash) {
             setTimeout(function() {
-                successFlash.remove();
-            }, 1000); // remove element 1s after the transition occurs
-        }, 2000);  // trigger transition after 2s of element on screen
-    }
-
-
-    // Scroll to advice section
-    var adviceSection = document.getElementById("advice-section");
-    if (adviceSection) {
-        adviceSection.scrollIntoView({ behavior: "smooth" });
-    }
-
-    // Toggle advice border
-    function toggleAdviceBorder() {
-        adviceElement = document.querySelector('.advice');
-
-        if(window.innerWidth <= 768) {
-            adviceElement.classList.remove('gradient-border');
-        } else {
-            adviceElement.classList.add('gradient-border');
+                successFlash.classList.add("fade-out");
+                setTimeout(function() {
+                    successFlash.remove();
+                }, 1000); // Remove element 1s after the transition occurs
+            }, 2000); // Trigger transition after 2s of element on screen
         }
     }
 
-    // Run on page load
-    window.addEventListener('load', toggleAdviceBorder);
+    function displayLoading() {
+        var form = document.querySelector("form");
+        var loading =  document.getElementById("loading");
 
-    // Run on resize
-    window.addEventListener('resize', toggleAdviceBorder);
+        function showLoading() {
+            loading.classList.remove("hidden");
+            loading.classList.add("loading-visible");
+            loading.scrollIntoView();
+        }
 
-});
+        if(form) {
+            form.addEventListener("submit", showLoading);
+        }
+    }
+
+    function scrollToAdviceSection() {
+        var headerHeight = document.querySelector('header').offsetHeight + 100;
+
+        var adviceSection = document.getElementById("advice-section");
+        var scrollOptions = {
+            behavior: 'smooth',
+            block: 'start',
+            // Adjusting the top margin to offset the header height
+            // Ensures the top of the advice section stops just below the header
+            inline: 'nearest',
+            marginBlockStart: headerHeight + 'px'
+        }
+        if (adviceSection) {
+            adviceSection.scrollIntoView(scrollOptions);
+        }
+    }
+
+    // Initialize functions on page load
+    function init() {
+        handleFlashMessages();
+        displayLoading();
+        scrollToAdviceSection();
+    }
+
+    // Run initialization on DOMContentLoaded
+    init();
+
+})

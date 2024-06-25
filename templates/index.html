@@ -107,7 +107,7 @@
                                     <span class="tooltip-text">Such as children or other dependents who may qualify for tax benefits.</span>
                                 </span>
                             </label>
-                            <input type="number" id="dependents" name="dependents"  value="{{ form_data['dependents'] if form_data else '' }}" >
+                            <input type="number" id="dependents" name="dependents" min="0" value="{{ form_data['dependents'] if form_data else '' }}" >
                             <span class="tooltip desktop">(?)
                                 <span class="tooltip-text">Such as children or other dependents who may qualify for tax benefits.</span>
                             </span>
@@ -128,22 +128,27 @@
 
                         <button type="submit">Submit</button>
 
+                        <div id="loading" class="hidden">
+                            <p>Your AI Advice is being generated...</p>
+                        </div>
+
                     </form>
                 </div>
                     
             </section>
 
             <!-- Section to display AI advice -->
-            <section id="advice-section">
+            <section id="advice-section" class="{% if not advice %}hidden{% endif %}">
                 <div class="container">
-                    {% if advice %}
-                    <div class="advice gradient-border">
+                    <!-- {% if advice %} -->
+                    <div id="advice" class="advice container gradient-border border">
                         <div class="advice-inner">
                             <h2>Your Tax Advice</h2>
                             <p>{{ advice|safe }}</p>
                         </div>
                     </div>
-                    {% endif %}
+                    <!-- {% else %} -->
+                    <!-- {% endif %} -->
                 </div>
             </section>
 

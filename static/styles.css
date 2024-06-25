@@ -287,19 +287,44 @@ button[type="submit"]:hover {
 
 
 /* Advice Styles */
+
 .advice {
     background-color: var(--advice-bg);
     padding: 20px;
     margin-top: 20px;
 }
 
+.hidden {
+    display: none;
+}
+
+#loading {
+    align-items: center;
+    justify-content: center;
+    height: 100px; 
+    font-size: 18px;
+    color: var(--secondary-color);
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 20px; 
+    margin-top: 20px;
+}
+
+.loading-visible {
+    display: flex;
+}
+
+.border {
+	font-size: 1.6rem;
+	display: grid;
+	place-items: center;
+	border: 8px solid;
+	padding: 1rem;
+}
+
 .gradient-border{
-    padding: 5px;
-    border: 3px transparent;
-    border-radius: 30px;
-    background-image: linear-gradient(white, white), linear-gradient(172deg, rgba(7,162,10,1) 0%, rgba(13,190,217,1) 100%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
+    border-image: linear-gradient(351deg, #07a20a 40%, #0dbed9 80%) 0 1;
 }
 
 .advice-inner{
