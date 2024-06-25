@@ -11,11 +11,24 @@ import validations
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '1234'
 app_name = "EasyTax!"
-db_path = os.path.join(os.path.dirname(__file__), 'data/database.db')
+
+# data dir
+data_dir = os.path.join(os.path.dirname(__file__), 'data')
+db_path = os.path.join(data_dir, 'database.db')
+
+# Create database directory
+if not os.path.exists(data_dir):
+    try:
+        os.makedirs(data_dir)  #
+    except OSError as e:
+        print(f"Failed to create directory: {data_dir} - {e}")
 
 # Ensure the init_db script runs only once during application startup
 if not os.path.exists(db_path):
-    init_db.initialize_database(db_path)
+    try:
+        init_db.initialize_database(db_path)
+    except Exception as e:
+        print(f"Error initializing database: {str(e)}")
 
 # Seting up the database connection
 def get_db_connection(db_path):
