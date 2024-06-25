@@ -53,3 +53,6 @@ def test_create_missing_fields(client):
     }
     response = client.post('/create', data=data, follow_redirects=True)
     assert b'Missing required fields' in response.data
+
+    #
+    
