@@ -28,12 +28,7 @@ jobs:
           python -m venv venv 
           . venv/bin/activate
           pip install -r requirements.txt 
-
-      # Initialize database schema
-      - name: Set up db schema
-        run: |
-          . venv/bin/activate
-          python init_db.py
+          
 
       - name: Run tests
         run: |
