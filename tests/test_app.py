@@ -29,30 +29,30 @@ def test_index(client):
     assert b'Welcome to EasyTax!' in response.data
 
 # Test create route with valid data
-# def test_create_valid(client):
-#     data = {
-#         'income': '50000',
-#         'expenses': '25000',
-#         'filing-status': 'single',
-#         'dependents': '2',
-#         'investment-assets': '100000'
-#     }
-#     response = client.post('/create', data=data, follow_redirects=True)
-#     assert response.status_code == 200
-#     assert b'Tax information added successfully!' in response.data
-#     assert b'Your Tax Advice' in response.data 
+def test_create_valid(client):
+    data = {
+        'income': '50000',
+        'expenses': '25000',
+        'filing-status': 'single',
+        'dependents': '2',
+        'investment-assets': '100000'
+    }
+    response = client.post('/create', data=data, follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Tax information added successfully!' in response.data
+    assert b'Your Tax Advice' in response.data 
 
 # Test create route with missing fields
 
-# def test_create_missing_fields(client):
-#     data = {
-#         'income': '',
-#         'expenses': '25000',
-#         'filing-status': 'single',
-#         'dependents': '2',
-#         'investment-assets': '100000'
-#     }
-#     response = client.post('/create', data=data, follow_redirects=True)
-#     assert b'Missing required fields' in response.data
+def test_create_missing_fields(client):
+    data = {
+        'income': '',
+        'expenses': '25000',
+        'filing-status': 'single',
+        'dependents': '2',
+        'investment-assets': '100000'
+    }
+    response = client.post('/create', data=data, follow_redirects=True)
+    assert b'Missing required fields' in response.data
 
 
