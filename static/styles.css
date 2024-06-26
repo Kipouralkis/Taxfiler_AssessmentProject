@@ -295,7 +295,7 @@ button[type="submit"]:hover {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 #loading {
@@ -303,12 +303,13 @@ button[type="submit"]:hover {
     justify-content: center;
     height: 100px; 
     font-size: 18px;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
     color: var(--secondary-color);
-    background-color: #f0f0f0; 
-    border: 1px solid #ccc; 
     border-radius: 5px; 
     padding: 20px; 
     margin-top: 20px;
+    
 }
 
 .loading-visible {

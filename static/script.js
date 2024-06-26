@@ -17,8 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
     function displayLoading() {
         var form = document.querySelector("form");
         var loading =  document.getElementById("loading");
+        var adviceSection = document.getElementById("advice-section");
 
         function showLoading() {
+            if(adviceSection){
+                adviceSection.classList.add("hidden");
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             loading.classList.remove("hidden");
             loading.classList.add("loading-visible");
             loading.scrollIntoView();
@@ -31,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function scrollToAdviceSection() {
         var headerHeight = document.querySelector('header').offsetHeight + 100;
-
         var adviceSection = document.getElementById("advice-section");
+
         var scrollOptions = {
             behavior: 'smooth',
             block: 'start',
@@ -41,7 +46,8 @@ document.addEventListener("DOMContentLoaded", function() {
             inline: 'nearest',
             marginBlockStart: headerHeight + 'px'
         }
-        if (adviceSection) {
+
+        if (adviceSection && !adviceSection.classList.contains('hidden')) {
             adviceSection.scrollIntoView(scrollOptions);
         }
     }

@@ -80,9 +80,10 @@ def create():
             cursor.execute('INSERT INTO taxInfo (income, expenses, filing_status, dependents, investment_assets) VALUES (?, ?, ?, ?, ?)',
                            [sanitized_data[field] for field in ['income', 'expenses', 'filing_status', 'dependents', 'investment_assets']])
             conn.commit()
+
             conn.close()
 
-            flash('Tax information added successfully!', 'success')
+            # flash('Tax information added successfully!', 'success')
 
             # After writting to database has been successful, get AI advice
             advice = get_response(sanitized_data)

@@ -16,7 +16,7 @@
             </div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
                     <li><a href="#">File Taxes</a></li>
                     <li><a href="#">View Past Returns</a></li>
                     <li><a href="#">Help</a></li>
@@ -129,7 +129,7 @@
                         <button type="submit">Submit</button>
 
                         <div id="loading" class="hidden">
-                            <p>Your AI Advice is being generated...</p>
+                            <p>Please wait, your AI Advice is being generated...</p>
                         </div>
 
                     </form>
