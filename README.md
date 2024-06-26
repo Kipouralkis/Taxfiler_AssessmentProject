@@ -231,7 +231,7 @@ This GitHub Actions workflow consists of two jobs: test and deploy. It runs on e
 
     If all tests from the test job pass successfully, it builds a Docker image of the application and pushes it to GitHub Container Registry, making it available for deployment in a production environment.
 
-    - Condition: Runs only if the test job completes successfully (if: success()).
+    - Condition: Runs only if the test job completes successfully.
     - Runs on: ubuntu-latest.
 
     - Steps: 
