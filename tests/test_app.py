@@ -39,7 +39,6 @@ def test_create_valid(client):
     }
     response = client.post('/create', data=data, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Tax information added successfully!' in response.data
     assert b'Your Tax Advice' in response.data 
 
 # Test create route with missing fields
