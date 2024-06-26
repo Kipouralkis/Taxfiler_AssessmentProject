@@ -1,13 +1,22 @@
 import markdown2
 from openai import OpenAI
 from dotenv import load_dotenv
+import os
 
 # get openAI key from local .env
 load_dotenv()
-client = OpenAI()
+# client = OpenAI()
 
 def get_response(data):
+    # Initialize OpenAI client only if API key is available
+    openai_api_key = os.getenv('OPENAI_API_KEY')
 
+    # Check if API key is available
+    if not openai_api_key:
+        return "Error: OpenAI API key not available"
+    
+    # Initialize OpenAI client
+    client = OpenAI(api_key=openai_api_key)
 
     income = data['income']
     expenses = data['expenses']
