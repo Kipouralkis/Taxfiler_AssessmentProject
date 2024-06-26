@@ -27,12 +27,22 @@ You can read the full documentation at [Wiki](https://github.com/Kipouralkis/Tax
     pip install -r requirements.txt
     ```
 
+3. ## To use the AI feature:
+
+    1. Obtain an API key from OpenAI
+    
+    2. Create a `.env` file in the root directory of your project and add your OpenAI API key:
+    
+        ```shell
+        OPENAI_API_KEY = your-api-key
+        ```
+    
+_**Note**: The app is still able to run without AI advice if you don't have an OpenAI API key._
+
 _It is advised to make a new virtual environment before installing the requirements_
 
 
 ## Running the Application
-
-_**Note**: The app is still able to run without an AI API key. To configure OpenAI API key, see the AI integration section_
 
 ### On Windows: 
 
@@ -116,17 +126,6 @@ _**Note**: The app is still able to run without an AI API key. To configure Open
 ## OpenAI Model Integration
 
 This application integrates an OpenAI model to provide tax adviced based on user provided data. 
-
-## To use the AI feature:
-
-1. Obtain an API key from OpenAI
-
-2. Create a `.env` file in the root directory of your project and add your OpenAI API key:
-
-    ```shell
-    OPENAI_API_KEY = your-api-key
-    ```
-3. Run the application as before
 
 
 ### Integration Explanation
