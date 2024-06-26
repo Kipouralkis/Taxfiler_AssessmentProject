@@ -32,6 +32,8 @@ _It is advised to make a new virtual environment before installing the requireme
 
 ## Running the Application
 
+_**Note**: The app is still able to run without an AI API key. To configure OpenAI API key, see the AI integration section_
+
 ### On Windows: 
 
 1. **set the Flask app name to app.py**
