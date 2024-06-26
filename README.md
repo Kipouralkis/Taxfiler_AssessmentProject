@@ -37,9 +37,9 @@ You can read the full documentation at [Wiki](https://github.com/Kipouralkis/Tax
         OPENAI_API_KEY = your-api-key
         ```
     
-_**Note**: The app is still able to run without AI advice if you don't have an OpenAI API key._
-
-_It is advised to make a new virtual environment before installing the requirements_
+    _**Note**: The app is still able to run without AI advice if you don't have an OpenAI API key._
+    
+    _It is advised to make a new virtual environment before installing the requirements_
 
 
 ## Running the Application
