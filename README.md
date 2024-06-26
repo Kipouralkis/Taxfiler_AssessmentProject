@@ -5,7 +5,7 @@
 EasyTax! is a simple web application to help you get tax filing advice. By completing a form with your financial information, you can get personalized AI advice!
 
 ### Documentation
-You can read the full documentation at [Wiki](/wiki#tax-filing-application-project-documentation-page).
+You can read the full documentation at [Wiki](https://github.com/Kipouralkis/Taxfiler_AssessmentProject/wiki#tax-filing-application-project-documentation-page).
 
 
 ## Prerequisites
