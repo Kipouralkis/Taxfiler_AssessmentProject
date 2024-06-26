@@ -27,7 +27,7 @@ You can read the full documentation at [Wiki](https://github.com/Kipouralkis/Tax
     pip install -r requirements.txt
     ```
 
-3. ## To use the AI feature:
+3.  **To use the AI feature:**
 
     1. Obtain an API key from OpenAI
     
