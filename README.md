@@ -14,6 +14,8 @@ You can read the full documentation at [Wiki](https://github.com/Kipouralkis/Tax
 
 ## Setup Process
 
+ _It is advised to make a new virtual environment before installing the requirements_
+
 1.  **Clone the Repository:**
 
     ```shell
@@ -38,8 +40,6 @@ You can read the full documentation at [Wiki](https://github.com/Kipouralkis/Tax
         ```
     
     _**Note**: The app is still able to run without AI advice if you don't have an OpenAI API key._
-    
-    _It is advised to make a new virtual environment before installing the requirements_
 
 
 ## Running the Application
