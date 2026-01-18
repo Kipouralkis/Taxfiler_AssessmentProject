@@ -1,18 +1,14 @@
 from flask import Flask
+from flask_cors import CORS
 from routes.tax import tax_bp
-import os
 
 def create_app():
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    app = Flask(__name__)
 
-    app = Flask(
-        __name__,
-        template_folder=os.path.join(base_dir, "templates"),
-        static_folder=os.path.join(base_dir, "static")
-    )
+    # allow React (localhost:3000) to call Flask (localhost:8000)
+    CORS(app)
 
-    app.config["SECRET_KEY"] = "1234"
-
+    # register API routes
     app.register_blueprint(tax_bp)
 
     return app

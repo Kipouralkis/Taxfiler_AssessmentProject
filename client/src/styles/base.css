@@ -1,0 +1,25 @@
+
+:root {
+  --primary-color: #007a6c;
+  --secondary-color: #005f56;
+  --accent-color: #8adfd5;
+  --dark-text-color: #333;
+  --soft-text: #666;
+  --light-text: #fff;
+  --light-bg: #f0f0f0;
+  --section-bg: #fff;
+  --advice-bg: #f9f9f9;
+  --main-font: 'Roboto', Arial, sans-serif;
+  --heading-font: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--main-font);
+  background-color: var(--light-bg);
+  color: var(--soft-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}

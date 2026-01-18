@@ -1,0 +1,78 @@
+form {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  flex-grow: 1;
+  padding: 10px;
+  margin: 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: 15px 30px;
+  width: 40%;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  align-self: center;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+.tooltip {
+  display: inline-block;
+  margin-left: 5px;
+  color: var(--secondary-color);
+  cursor: pointer;
+  position: relative;
+  font-weight: bold;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: #444;
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px 8px;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

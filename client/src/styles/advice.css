@@ -1,0 +1,41 @@
+.advice {
+  background-color: var(--advice-bg);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.advice-inner {
+  padding: 0 40px;
+}
+
+.advice h2 {
+  margin: 40px 0;
+}
+
+.advice ul,
+.advice ol,
+.advice p {
+  margin-bottom: 20px;
+  list-style-position: inside;
+  text-align: center;
+  padding-left: 0;
+}
+
+.advice li {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.gradient-border {
+  border-image: linear-gradient(351deg, #07a20a 40%, #0dbed9 80%) 0 1;
+}
+
+.border {
+  font-size: 1.6rem;
+  display: grid;
+  place-items: center;
+  border: 8px solid;
+  padding: 1rem;
+}
