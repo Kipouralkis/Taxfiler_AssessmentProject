@@ -31,6 +31,10 @@ export default function TaxForm({ setAdvice }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <div className="form-heading">
+        <h1>Welcome to EasyTax! the Tax Filing Assistant.</h1>
+        <p>File your taxes with our easy-to-use tax filing system. Easily and securely. <br/> To begin, enter your tax information below:</p>
+      </div>
       <div className="form-group">
         <label>Income *</label>
         <input name="income" value={form.income} onChange={update} />

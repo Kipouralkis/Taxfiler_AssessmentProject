@@ -3,3 +3,6 @@
 
 # ignore database
 database.db
+
+archive/
+

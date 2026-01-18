@@ -10,7 +10,6 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      hello
       <main>
         <TaxForm setAdvice={setAdvice} />
         <AdvicePanel advice={advice} />

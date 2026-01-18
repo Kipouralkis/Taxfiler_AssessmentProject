@@ -7,7 +7,27 @@ form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  max-width: 1500px;
+  margin: 0 auto;
 }
+
+.form-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-heading h1 {
+  margin-bottom: 10px;
+  color: #007A6C;
+}
+
+.form-heading p {
+  margin: 0 auto;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
 
 .form-group {
   display: flex;
