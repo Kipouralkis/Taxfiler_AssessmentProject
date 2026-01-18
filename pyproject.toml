@@ -1,0 +1,8 @@
+[project]
+name = "taxfiler"
+version = "0.1.0"
+description = "Taxfiler backend"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = ["server"]

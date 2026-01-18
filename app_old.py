@@ -4,8 +4,8 @@ import sqlite3
 from flask import Flask, abort, flash, redirect, render_template, request, url_for
 from openai_request import get_response
 
-import init_db
-import validations
+import Taxfiler_AssessmentProject.server.utils.init_db as init_db
+import Taxfiler_AssessmentProject.server.utils.validations as validations
 
 
 app = Flask(__name__)

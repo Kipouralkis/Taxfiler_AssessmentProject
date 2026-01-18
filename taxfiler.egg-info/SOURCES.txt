@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+server/main.py
+taxfiler.egg-info/PKG-INFO
+taxfiler.egg-info/SOURCES.txt
+taxfiler.egg-info/dependency_links.txt
+taxfiler.egg-info/top_level.txt
+tests/test_app.py

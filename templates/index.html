@@ -16,7 +16,7 @@
             </div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+                    <li><a href="{{ url_for('tax.index') }}" class="active">Home</a></li>
                     <li><a href="#">File Taxes</a></li>
                     <li><a href="#">View Past Returns</a></li>
                     <li><a href="#">Help</a></li>
@@ -53,7 +53,7 @@
                 {% endwith %}
 
                 <div class="container">
-                    <form id="taxFrom" action="{{ url_for('create') }}" method="POST">
+                    <form id="taxFrom" action="{{ url_for('tax.create') }}" method="POST">
 
                         <!-- income -->
                         <div class="form-group">
